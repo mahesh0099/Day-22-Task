@@ -1,0 +1,153 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //for each
+//          let myArray = ["one", "two", "three", "four"];
+//          myArray.forEach(function(item){
+//              console.log(item);
+//          });
+// //arrow function
+//          let hello = () => {
+//    return "Hello World!";
+//  } 
+//  console.log(hello());
+// //arrow function
+// myArray.forEach((item,index)=>{
+//     console.log(item);
+//     console.log(index);
+//     console.log(`Current index: ${index}`);
+// });
+
+// let word1="my word";
+// let word2="my word2";
+// var sent=word1+" "+word2;
+// console.log(sent);
+// let sent1=word1+" "+word2;
+// console.log(sent1);
+
+
+// let letter1="word1";
+// let letter2="word2";
+
+// let obj={letter1,letter2};
+
+// console.log(letter1);
+
+
+// //spread operator
+// //array spread
+// let array1=[1,2,3];
+// let array2=[7,8,9];
+
+// let array3=[...array1,...array2,4,5,6];
+// console.log("array3:"+array3);
+
+
+
+// //object spread
+
+// let obj1={
+//     name:"mahesh",
+//     age:30
+// }
+
+// let obj2={
+//     ...obj1,
+//     phone:"892732987",
+//     email:"mahe.komma@gmail.com"
+// }
+// console.log(obj2)
+
+// //map
+
+// let vals=[1,2,3,4,5,6];
+// console.log(vals);
+
+// vals=vals.map(function(x){
+//     return x*2;
+// });
+// console.log(vals);
+
+// vals1=vals.map((x)=>{
+//     return x+5;
+// });
+// console.log(vals1);
+
+
+
+
+//session task
+
+const inputVal="#exmple || @name && user_email @name #exmple || user_email &&";
+
+var inputVal1=inputVal.split(" ");
+//console.log((inputVal1[i].length)-1);
+console.log(inputVal1[0]);
+var obj=[];
+
+
+for(var i=0;i<inputVal1.length;i++){
+     val1=inputVal1[i].substring(0,1);
+
+     if(val1.startsWith("|"))
+     {
+      obj.push({type:"operator",
+        value:"OR"})
+     }
+     else if(val1.startsWith("&"))
+     {
+        obj.push( {type:"operator",
+         value:"AND"})
+     }
+     else if(val1.startsWith("#")){
+         let len1=(inputVal1[i].length);
+        obj.push({type:"intent",
+        value:inputVal1[i].substring(1,len1)})
+     }
+     else if(val1.startsWith("@")){
+         let len=(inputVal1[i].length);
+        obj.push({type:"Entity",
+        value:inputVal1[i].substring(1,len)})
+     }
+     else{
+         obj.push({type:"variable",
+         value:inputVal1[i]});
+     }
+   //console.log(val1);
+    
+}
+console.log(obj);
+
+
+// const outputval=[
+//     {type:'intent',
+//     value:'exmpl'
+//     },
+//     {
+//         type:'operator',
+//         value:'OR'
+//     },
+//     {
+//         type:'entity',
+//         value:'name'
+//     },
+//     {
+//         type:'operator',
+//         value:'AND'
+//     },
+//     {
+//        type:'variable',
+//        value:'user_email' 
+//     }
+
+// ]
+
+// console.log(outputval);
+    </script>
+</body>
+</html>
